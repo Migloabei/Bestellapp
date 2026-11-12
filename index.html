@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellapp</title>
+    <link rel="icon" href="./assets/icons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/basket.css">
+</head>
+
+<body onload="init()">
+
+    <header>
+        <div class="headerContent">
+            <a href="./index.html"><img class="logo" src="./assets/icons/logo.png" alt="Bestell App"></a>
+            <img class="menuIcon" src="./assets/icons/menu.png" alt="Menü">
+        </div>
+    </header>
+
+    <section class="restaurantHeader">
+        <div class="coverImage"></div>
+        <div class="restaurantLogo">
+            <img src="./assets/img/burgericon.png" alt="BurgerHouse Logo">
+        </div>
+    </section>
+
+    <div class="title">
+        <div class="titleRow">
+            <h1><span>Burger</span>House</h1>
+            <p class="rating">&#9733; 4,1 <span>(317)</span></p>
+        </div>
+        <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
+        <p class="deliveryInfo">Lieferung in 30&ndash;45 Minuten &middot; Liefergebühr 4,99€</p>
+    </div>
+
+    <main class="mainSection">
+        <div class="leftSide">
+            <div id="meals"></div>
+        </div>
+        <aside class="rightSide">
+            <div id="basket" class="basket"></div>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Miglos Foods</p>
+        <a href="#">Imprint</a>
+        <a href="#">Cookie Preferences</a>
+    </footer>
+
+    <button id="basketButton" class="basketButton" onclick="openBasketDialog()"></button>
+
+    <dialog id="basketDialog" class="basketDialog" onclick="closeDialogOnBackdrop(event)">
+        <div class="dialogContent">
+            <button class="closeButton" onclick="closeDialog('basketDialog')" aria-label="Warenkorb schließen">&times;</button>
+            <div id="basketMobile" class="basket"></div>
+        </div>
+    </dialog>
+
+    <dialog id="orderDialog" class="orderDialog" onclick="closeDialogOnBackdrop(event)">
+        <div class="dialogContent">
+            <button class="closeButton" onclick="closeDialog('orderDialog')" aria-label="Meldung schließen">&times;</button>
+            <img src="./assets/icons/delivery.png" alt="">
+            <h2>Order confirmed!</h2>
+            <p>Your food is on the way!</p>
+            <p class="orderHint">Das war eine Testbestellung.</p>
+        </div>
+    </dialog>
+
+    <script src="./scripts/db.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
