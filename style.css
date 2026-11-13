@@ -114,6 +114,7 @@ h1 span {
 
 .rightSide {
     position: sticky;
+    z-index: 1;
     top: 16px;
     width: 380px;
     margin-top: 40px;
@@ -126,8 +127,7 @@ h1 span {
     height: 60px;
     margin: 40px 0 24px;
     padding-left: 24px;
-    background-color: #FF8C00;
-    border-radius: 8px;
+    border-image: linear-gradient(#FF8C00, #FF8C00) fill 0 / 0 / 0 100vmax;
 }
 
 .categoryHeader h2 {
