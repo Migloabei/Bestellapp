@@ -51,18 +51,28 @@
         <a href="#">Cookie Preferences</a>
     </footer>
 
-    <button id="basketButton" class="basketButton" onclick="openBasketDialog()"></button>
+    <nav class="mobileNav">
+        <a href="#"><img src="./assets/icons/home.png" alt="Startseite"></a>
+        <a href="#"><img src="./assets/icons/profile.png" alt="Profil"></a>
+        <a href="#meals"><img src="./assets/icons/food.png" alt="Speisekarte"></a>
+        <button class="navBasket" onclick="openBasketDialog()" aria-label="Warenkorb öffnen">
+            <img src="./assets/icons/cart.png" alt="">
+            <span id="basketCount" class="basketCount hidden"></span>
+        </button>
+    </nav>
 
     <dialog id="basketDialog" class="basketDialog" onclick="closeDialogOnBackdrop(event)">
         <div class="dialogContent">
-            <button class="closeButton" onclick="closeDialog('basketDialog')" aria-label="Warenkorb schließen">&times;</button>
+            <button class="closeButton" onclick="closeDialog('basketDialog')"
+                aria-label="Warenkorb schließen">&times;</button>
             <div id="basketMobile" class="basket"></div>
         </div>
     </dialog>
 
     <dialog id="orderDialog" class="orderDialog" onclick="closeDialogOnBackdrop(event)">
         <div class="dialogContent">
-            <button class="closeButton" onclick="closeDialog('orderDialog')" aria-label="Meldung schließen">&times;</button>
+            <button class="closeButton" onclick="closeDialog('orderDialog')"
+                aria-label="Meldung schließen">&times;</button>
             <img src="./assets/icons/delivery.png" alt="">
             <h2>Order confirmed!</h2>
             <p>Your food is on the way!</p>

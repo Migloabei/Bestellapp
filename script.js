@@ -36,7 +36,7 @@ function renderBasket() {
     }
     document.getElementById('basket').innerHTML = basketHtml;
     document.getElementById('basketMobile').innerHTML = basketHtml;
-    renderBasketButton();
+    renderBasketCount();
 }
 
 
@@ -49,13 +49,14 @@ function getBasketItemsHtml() {
 }
 
 
-function renderBasketButton() {
+function renderBasketCount() {
     let amount = 0;
     for (let index = 0; index < basket.length; index++) {
         amount += basket[index].amount;
     }
-    let total = calcSubtotal() + deliveryFee;
-    document.getElementById('basketButton').innerHTML = getBasketButtonTemplate(amount, total);
+    let countRef = document.getElementById('basketCount');
+    countRef.innerHTML = amount;
+    countRef.classList.toggle('hidden', amount === 0);
 }
 
 

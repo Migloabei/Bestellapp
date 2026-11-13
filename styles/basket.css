@@ -108,25 +108,6 @@
     background-color: #FF8C00;
 }
 
-.basketButton {
-    display: none;
-    align-items: center;
-    gap: 10px;
-    position: fixed;
-    left: 50%;
-    bottom: 16px;
-    transform: translateX(-50%);
-    padding: 12px 28px;
-    background-color: #353332;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    border-radius: 28px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    font-size: 18px;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
 dialog {
     margin: auto;
     padding: 0;
@@ -186,13 +167,3 @@ dialog::backdrop {
     font-size: 14px;
 }
 
-@media (max-width: 900px) {
-    .basketButton {
-        display: flex;
-    }
-}
-
-.basketButton img {
-    width: 24px;
-    height: 24px;
-}

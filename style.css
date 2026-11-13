@@ -227,6 +227,53 @@ footer a:hover {
 }
 
 @media (max-width: 900px) {
+    .mobileNav {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        justify-content: space-around;
+        align-items: center;
+        height: 64px;
+        background-color: #353332;
+    }
+
+    .mobileNav a,
+    .navBasket {
+        position: relative;
+        display: flex;
+        padding: 8px;
+        background-color: transparent;
+        border: none;
+    }
+
+    .mobileNav img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .basketCount {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 4px;
+        border-radius: 9px;
+        background-color: #e86a1c;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 18px;
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+
     .rightSide {
         display: none;
     }
@@ -244,7 +291,13 @@ footer a:hover {
     }
 
     footer {
+        flex-direction: column;
+        gap: 8px;
         padding-bottom: 96px;
+    }
+
+    .mobileNav {
+        display: flex;
     }
 }
 

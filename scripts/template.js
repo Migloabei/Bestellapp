@@ -74,11 +74,3 @@ function getEmptyBasketTemplate() {
     <h2>Your Basket</h2>
     <p class="basketEmpty">Dein Warenkorb ist noch leer.<br>Füge ein Gericht über "Add to basket" hinzu.</p>`;
 }
-
-
-function getBasketButtonTemplate(amount, total) {
-    if (amount === 0) {
-        return `<img src="./assets/icons/cart.png" alt=""> Basket`;
-    }
-    return `<img src="./assets/icons/cart.png" alt=""> Basket (${amount}) &middot; ${formatPrice(total)}`;
-}
