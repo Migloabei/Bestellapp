@@ -46,13 +46,13 @@ function getBasketTemplate(itemsHtml, subtotal) {
 }
 
 
-function getBasketItemTemplate(item, index) {
+function getBasketItemTemplate(item, index, priceText) {
     return `
     <div class="basketItem">
         <p class="basketItemName">${item.amount} x ${item.name}</p>
         <div class="basketItemRow">
             ${getBasketControlsTemplate(item, index)}
-            <span>${formatPrice(item.price * item.amount)}</span>
+                        <span>${priceText}</span>
         </div>
     </div>`;
 }

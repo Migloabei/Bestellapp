@@ -58,7 +58,9 @@ function renderBasket() {
 function getBasketItemsHtml() {
     let itemsHtml = "";
     for (let index = 0; index < basket.length; index++) {
-        itemsHtml += getBasketItemTemplate(basket[index], index);
+        let item = basket[index];
+        let priceText = formatPrice(item.price * item.amount);
+        itemsHtml += getBasketItemTemplate(item, index, priceText);
     }
     return itemsHtml;
 }
