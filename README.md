@@ -1,26 +1,37 @@
 # Bestellapp
 
-Eine Bestell-App im Stil von Lieferando, entstanden als Projekt in der Weiterbildung bei der Developer Akademie. Umgesetzt mit HTML, CSS und JavaScript, ohne Frameworks.
+A food ordering app in the style of Lieferando, built as a project during my training at the Developer Akademie. Made with plain HTML, CSS and JavaScript, without any frameworks.
 
-## Funktionen
+## Features
 
-- Speisekarte mit drei Kategorien, die per JavaScript aus einem Array gerendert wird
-- Warenkorb: Gerichte hinzufügen, Menge erhöhen und verringern, einzelne Gerichte löschen
-- Zwischensumme, Liefergebühr und Gesamtsumme
-- Testbestellung mit Bestätigung als Dialog
-- Warenkorb bleibt auf dem Desktop beim Scrollen sichtbar
-- Responsive bis 320 px Breite, auf kleinen Bildschirmen öffnet sich der Warenkorb als Dialog
+- Menu with three categories (pizza, burger, salad), rendered from an array with JavaScript
+- Basket: add dishes, increase or decrease the amount, remove single dishes
+- Subtotal, delivery fee and total price
+- Test order with a confirmation dialog
+- On desktop, the basket stays visible while scrolling
+- Responsive down to a width of 320 px
+- On mobile, a fixed menu bar at the bottom shows the number of items in the basket and opens the basket as a dialog
+- The page does not scroll in the background while a dialog is open
 
-## Aufbau
+## Project structure
 
-| Datei | Inhalt |
+| File | Content |
 |---|---|
-| `index.html` | Grundgerüst der Seite |
-| `scripts/db.js` | Gerichte und Kategorien |
-| `scripts/template.js` | HTML-Templates |
-| `script.js` | Logik für Speisekarte und Warenkorb |
-| `style.css`, `styles/` | Layout, Warenkorb und Grundeinstellungen |
+| `index.html` | Basic page structure |
+| `scripts/db.js` | Dishes and category icons |
+| `scripts/template.js` | HTML templates |
+| `script.js` | Logic for the menu and the basket |
+| `style.css` | Page layout and menu |
+| `styles/standard.css` | Reset and base settings |
+| `styles/basket.css` | Basket and dialogs |
+| `assets/` | Icons and images |
 
-## Starten
+Data, templates and logic are kept in separate files. The template functions contain no logic: all decisions and calculations happen in `script.js`, and the finished values are passed to the templates as parameters.
 
-Repository herunterladen und `index.html` im Browser öffnen, zum Beispiel mit der VS-Code-Erweiterung Live Server.
+## Getting started
+
+Clone the repository and open `index.html` in your browser, for example with the VS Code extension Live Server.
+
+```
+git clone https://github.com/Migloabei/Bestellapp.git
+```
