@@ -47,11 +47,20 @@ function getAddButtonHtml(index, amount) {
 function renderBasket() {
     let basketHtml = getEmptyBasketTemplate();
     if (basket.length > 0) {
-        basketHtml = getBasketTemplate(getBasketItemsHtml(), calcSubtotal());
+        basketHtml = getFilledBasketHtml();
     }
     document.getElementById('basket').innerHTML = basketHtml;
     document.getElementById('basketMobile').innerHTML = basketHtml;
     renderBasketCount();
+}
+
+
+function getFilledBasketHtml() {
+    let subtotal = calcSubtotal();
+    let subtotalText = formatPrice(subtotal);
+    let deliveryText = formatPrice(deliveryFee);
+    let totalText = formatPrice(subtotal + deliveryFee);
+    return getBasketTemplate(getBasketItemsHtml(), subtotalText, deliveryText, totalText);
 }
 
 

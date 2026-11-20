@@ -33,16 +33,16 @@ function getAddedButtonTemplate(index, amount) {
 }
 
 
-function getBasketTemplate(itemsHtml, subtotal) {
+function getBasketTemplate(itemsHtml, subtotalText, deliveryText, totalText) {
     return `
     <h2>Your Basket</h2>
     <div class="basketItems">${itemsHtml}</div>
     <div class="basketSummary">
-        <div class="summaryRow"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
-        <div class="summaryRow"><span>Delivery fee</span><span>${formatPrice(deliveryFee)}</span></div>
-        <div class="summaryRow summaryTotal"><span>Total</span><span>${formatPrice(subtotal + deliveryFee)}</span></div>
+        <div class="summaryRow"><span>Subtotal</span><span>${subtotalText}</span></div>
+        <div class="summaryRow"><span>Delivery fee</span><span>${deliveryText}</span></div>
+        <div class="summaryRow summaryTotal"><span>Total</span><span>${totalText}</span></div>
     </div>
-    <button class="buyButton" onclick="orderBasket()">Buy now (${formatPrice(subtotal + deliveryFee)})</button>`;
+    <button class="buyButton" onclick="orderBasket()">Buy now (${totalText})</button>`;
 }
 
 
@@ -52,7 +52,7 @@ function getBasketItemTemplate(item, index, priceText) {
         <p class="basketItemName">${item.amount} x ${item.name}</p>
         <div class="basketItemRow">
             ${getBasketControlsTemplate(item, index)}
-                        <span>${priceText}</span>
+            <span>${priceText}</span>
         </div>
     </div>`;
 }
