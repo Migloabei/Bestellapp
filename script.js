@@ -23,9 +23,24 @@ function renderMeals() {
             mealsRef.innerHTML += getCategoryTemplate(meals[index].category);
             currentCategory = meals[index].category;
         }
-        let amount = getAmountInBasket(meals[index].name);
-        mealsRef.innerHTML += getMealTemplate(meals[index], index, amount);
+        mealsRef.innerHTML += getMealHtml(index);
     }
+}
+
+
+function getMealHtml(index) {
+    let meal = meals[index];
+    let amount = getAmountInBasket(meal.name);
+    let buttonHtml = getAddButtonHtml(index, amount);
+    return getMealTemplate(meal, formatPrice(meal.price), buttonHtml);
+}
+
+
+function getAddButtonHtml(index, amount) {
+    if (amount > 0) {
+        return getAddedButtonTemplate(index, amount);
+    }
+    return getAddButtonTemplate(index);
 }
 
 

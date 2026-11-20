@@ -7,27 +7,29 @@ function getCategoryTemplate(category) {
 }
 
 
-function getMealTemplate(meal, index, amount) {
+function getMealTemplate(meal, priceText, buttonHtml) {
     return `
     <div class="mealCard">
         <img class="mealImage" src="${meal.image}" alt="${meal.name}">
         <div class="mealInfo">
             <div class="mealHead">
                 <h3>${meal.name}</h3>
-                <span class="mealPrice">${formatPrice(meal.price)}</span>
+                <span class="mealPrice">${priceText}</span>
             </div>
             <p class="mealDescription">${meal.description}</p>
-            ${getAddButtonTemplate(index, amount)}
+            ${buttonHtml}
         </div>
     </div>`;
 }
 
 
-function getAddButtonTemplate(index, amount) {
-    if (amount > 0) {
-        return `<button class="addButton added" onclick="addToBasket(${index})">Added ${amount}</button>`;
-    }
+function getAddButtonTemplate(index) {
     return `<button class="addButton" onclick="addToBasket(${index})">Add to basket</button>`;
+}
+
+
+function getAddedButtonTemplate(index, amount) {
+    return `<button class="addButton added" onclick="addToBasket(${index})">Added ${amount}</button>`;
 }
 
 
